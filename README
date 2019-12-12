@@ -1,0 +1,48 @@
+ANGHEL MIHAI-GABRIEL 313CD
+
+Cerinta 0 - Am implementat consola folosint un while(1) pentru a rula pana in
+momentul in care apare comanda quit. Se citeste comanda, si in functie de ceea
+ce s-a citit, se apeleaza direct functia corespunzatoare sau in cazul in care
+comanda are si parametru, se extrage intr-un pointer si se apeleaza functia.
+
+Cerinta 1 - Pentru cerinta 1 am folosit functia uppercase care verifica daca
+fiecare caracter este litera si in cazul in care este litera si se afla la
+inceputul versului se converteste in litera mare, altfel se converteste in
+litera mica. Conversia se face cu ajutorul codului ASCII.
+
+Cerinta 2 - Pentru cerinta 2 am implementat functia trimming care extrage
+cuvintele din poezia initiala si le concateneaza intr-un auxiliar (aux),
+adaugand cate un spatiu dupa fiecare cuvant. Pentru a elimina spatiile de la
+sfarsitul versurilor, folosesc functia memmove.
+
+Cerinta 3 - Am folosit o functie silly care are ca parametrii o variabila de
+tip char prin care primeste poezia si un parametru de tip float prin care
+primeste un numar pozitiv subunitar, numar primit in linia de comanda. Se
+parcurge poezia caracter cu caracter si se verifica daca caracterul este
+litera, daca da, se genereaza un numar random pozitiv subunitar si se compara
+cu parametrul primit.Daca are loc conditia pe care trebuie sa o indeplineasca,
+se face conversia din litera mica in litera mare sau invers.
+
+Cerinta 4 - Acest task se rezolva cu functia friendly in care se parcurge
+poezia si se extrage fiecare cuvant cautandu-se un diminutiv al acestuia
+folosind get_friendly_word. In cazul in care get_friendly_word returneaza un
+diminutiv, se inlocuieste cuvantul initial cu diminutivul lui. Pentru
+inlocuire, se foloseste functia 'replace' care primeste ca parametrii poezia
+si doua cuvinte. Aceasta functie foloseste o variabila aux in care se copiaza
+poezia incepand de la sfarsitul primului cuvant, apoi se pune cuvantul2 pe
+pozitia pe care se afla cuvantul1 si se adauga restul poeziei.
+
+Cerinta 5 - Pentru aceasta cerinta se foloseste o functie principala numita
+rhimy, dar si alte 3 functii secundare : prelucrare,replace,ordonare. Functia
+rhimy primeste ca parametrii poezia si un pointer care reprezinta parametrul
+comenzii din main. Se compara parametrul pentru a afla ce tip de rima se cere.
+In functie de rima ceruta se parcurge poezia si se salveaza ultimele cuvinte
+din versuri. Daca rima este imperecheata, dupa fiecare doua cuvinte salvate,
+se apeleaza functia "prelucrare" transmitand ca parametrii poezia, cele doua
+cuvinte si indicii unde au fost gasite cuvintele. Functia 'prelucrare'
+apeleaza get_synonym si daca primeste o lista de sinonime pentru primul
+cuvant, se ordoneaza lista lexicografic cu functia 'ordonare', daca nu se
+gaseste o lista, se procedeaza la fel pentru al doilea cuvant. Apoi se
+inlocuieste cuvantul pentru care s-a gasit o lista de sinonime , cu un sinonim
+potrivit pentru a rima cu celalalt cuvant. Inlocuirea cuvantului se realizeaza
+cu functia 'replace' descrisa la cerinta 4.
